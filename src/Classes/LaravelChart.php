@@ -80,6 +80,14 @@ class LaravelChart
                     $query->with($this->options['relationship_name']);
                 }
 
+                if ($this->options['chart_type'] != 'line' && isset($this->options['scopes'])) {
+                    if (is_callable($this->options['scopes'])) {
+                        $query->where($this->options['scopes']);
+                    } else {
+                        $query->whereRaw($this->options['scopes']);
+                    }
+                }
+
                 $collection = $query->get();
 
                 if ($this->options['report_type'] != 'group_by_relationship') {

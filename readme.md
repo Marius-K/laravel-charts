@@ -146,6 +146,7 @@ $chart_options = [
 - `range_date_start` (optional) - show data in from a date range by `filter_field`, this is the start date.
 - `range_date_end` (optional) - show data in from a date range by `filter_field`, this is the end date.
 - `field_distinct` (optional) - field name required, it will apply a distinct(fieldname)
+- `scopes` (optional, only for `bar` and `pie` chart types) - callback function or raw condition for scopes.
 
 - - - - -
 
